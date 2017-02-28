@@ -58,6 +58,7 @@ a {
     padding: 0px;
     white-space: nowrap;
     overflow-x: auto;
+    order: 2;
 }
 
 /* Detail Image */
@@ -71,6 +72,17 @@ a {
 .detail-image-frame {
     text-align: center;
     position: relative;
+}
+
+.detail-image-title {
+    position: absolute;
+    bottom: -16px;
+    left: 4px;
+
+    font-family: cursive;
+    color: white;
+    text-shadow: 2px 2px 9px rgba(0, 0, 0, 0.9);
+    font-size: 40px;
 }
 
 /* Text */
@@ -97,4 +109,26 @@ a {
 /* Detail Image */
 .detail-image {
     width: 90%;
+}
+
+/* Media Queries */
+@media all and (orientation: landscape) {
+    .main-content{
+        flex-direction: row;
+        overflow: hidden;
+    }
+
+    .thumbnail-list {
+        flex-direction: column;
+        margin-left: 20px;
+        order: 0;
+    }
+
+    .thumbnail-item {
+        max-width: 260px;
+    }
+
+    .thumbnail-item + .thumbnail-item {
+        margin-top: 20px;
+    }
 }
